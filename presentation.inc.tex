@@ -1,0 +1,88 @@
+
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass{beamer}
+\usepackage{beamerthemesplit}
+\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5]{beamerposter} 
+% 2017-11-04: get rid of font size errors
+% https://tex.stackexchange.com/questions/58087/how-to-remove-the-warnings-font-shape-ot1-cmss-m-n-in-size-4-not-available
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{hyperref} % allow hyperlinks
+% 2017-11-04: create border around link
+% https://tex.stackexchange.com/questions/360716/trying-to-create-an-underlined-wrapped-link
+\hypersetup{urlbordercolor=0 0 0,pdfborderstyle={/S/U/W 1}}
+% 2017-11-04: use minipages to place figures side by side
+% https://tex.stackexchange.com/questions/37581/latex-figures-side-by-side
+\usepackage{subcaption}
+
+
+%----------------------------------------------------------------------------------------
+% CODE SNIPPET SECTION
+%----------------------------------------------------------------------------------------
+
+% 2017-09-14: https://stackoverflow.com/questions/3175105/writing-code-in-latex-document
+% 2017-09-14: http://mirror.switch.ch/ftp/mirror/tex/macros/latex/contrib/listings/listings.pdf
+
+\usepackage{listings}
+
+\lstset{frame=tb,
+  language=bash,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  backgroundcolor=\color{brightyellow},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+% to change the default language use 
+%  \lstset{language=Java}
+% in the document
+
+%----------------------------------------------------------------------------------------
+% TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\assignmentTitle}
+\subtitle{\assignmentSubtitle}
+\date{\normalsize\assignmentDate}
+\author{Sebastian Hutter}
+\institute[FFHS]{FFHS - Fernfachhochschule Schweiz}
+
+% \logo{\includegraphics[scale=.25]{unilogo.pdf}}
+
+%----------------------------------------------------------------------------------------
+% PRESENTATION SETUP
+%----------------------------------------------------------------------------------------
+
+% http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf
+% https://github.com/matze/mtheme
+% brew tap caskroom/fonts
+  % brew cask install \
+  %   font-fira-code \
+  %   font-fira-mono \
+  %   font-fira-mono-for-powerline \
+  %   font-fira-sans
+\usetheme{metropolis}
+
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\frame{\maketitle} % <-- generate frame with title
+
