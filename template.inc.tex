@@ -22,10 +22,13 @@
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
-\usepackage[german]{babel} % English language/hyphenation
+\usepackage[german]{babel} % German language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
-
+% use utf8 for proper umlaute https://tex.stackexchange.com/questions/40962/german-character-not-rendered-to-pdf
+\usepackage[utf8]{inputenc}
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+% \includepdf[pages={1}]{myfile.pdf}
+\usepackage{pdfpages}
 
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
@@ -45,6 +48,8 @@
 \numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+
 
 %----------------------------------------------------------------------------------------
 % CODE SNIPPET SECTION
@@ -95,6 +100,11 @@
 \textsc{FFHS - Fernfachhochschule Schweiz} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
 \huge \assignmentTitle \\ % The assignment title - \newcommand{\assignmentTitle}{My awesome title}
+\ifdefined\assignmentSmallTitle
+\bigbreak
+\small \assignmentSmallTitle
+\bigbreak
+\fi
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
